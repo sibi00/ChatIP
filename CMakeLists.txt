@@ -23,6 +23,12 @@ set(PROJECT_SOURCES
         addnewnodepopup.h
         addnewnodepopup.cpp
         addnewnodepopup.ui
+        infopopup.cpp
+        infopopup.h
+        infopopup.ui
+        chatwindow.cpp
+        chatwindow.h
+        chatwindow.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

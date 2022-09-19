@@ -21,9 +21,7 @@ addnewnodepopup::~addnewnodepopup()
 void addnewnodepopup::on_addNewNodeButton_clicked()
 {
     QString name = ui->nodeNameLineEdit->text();
-    qInfo()<<name;
     QString address = ui->nodeAddressLineEdit->text();
-    qInfo() << address;
     dynamic_cast<MainWindow*>(parent)->addNewNode(name,address);
     this->close();
 }

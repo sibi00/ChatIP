@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>332</width>
+    <height>576</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -24,37 +24,52 @@
      </rect>
     </property>
    </widget>
-   <widget class="QPushButton" name="debugSendText">
+   <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>650</x>
-      <y>510</y>
-      <width>151</width>
-      <height>24</height>
+      <x>40</x>
+      <y>10</y>
+      <width>61</width>
+      <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>Send text </string>
+     <string>Logged as:</string>
     </property>
    </widget>
-   <widget class="QTextBrowser" name="debugTextBrowser">
+   <widget class="QLabel" name="userLoggedLabel">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>70</y>
-      <width>421</width>
-      <height>192</height>
+      <x>110</x>
+      <y>10</y>
+      <width>49</width>
+      <height>16</height>
      </rect>
     </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
    </widget>
-   <widget class="QLineEdit" name="debugSendLineEdit">
+   <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>510</y>
-      <width>261</width>
-      <height>22</height>
+      <x>40</x>
+      <y>50</y>
+      <width>49</width>
+      <height>16</height>
      </rect>
+    </property>
+    <property name="text">
+     <string>Nodes</string>
     </property>
    </widget>
   </widget>
@@ -66,7 +81,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>332</width>
      <height>22</height>
     </rect>
    </property>

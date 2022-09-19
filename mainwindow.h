@@ -3,7 +3,9 @@
 
 #include <QMainWindow>
 #include <QtNetwork/QUdpSocket>
-
+#include <QInputDialog>
+#include <QListWidgetItem>
+#include <chatwindow.h>
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -22,18 +24,22 @@ public slots:
     void readyRead();
 private slots:
     void addNewNodePopup();
-
-    void on_debugSendText_clicked();
-
-    void on_debugSendLineEdit_returnPressed();
+    void infoPopup();
+    void on_nodesListWidget_itemDoubleClicked(QListWidgetItem *item);
 
 private:
     Ui::MainWindow *ui;
 
-    QMap<QString,QString> nodes;
+    QMap<QString,QHostAddress> mNodesByName;
+    QMap<QString,QString> mNodesByHostAddress;
+    QMap<QString,ChatWindow*> mChatWindowsByName;
     QUdpSocket * socket;
     QDialog * mPopup;
+    QDialog * mInfoPopupp;
     QMenu *fileMenu;
+    QMenu *infoMenu;
     QAction * newNode;
+    QAction * info;
+
 };
 #endif // MAINWINDOW_H
