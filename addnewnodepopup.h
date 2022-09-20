@@ -13,7 +13,8 @@ class addnewnodepopup : public QDialog
 public:
     explicit addnewnodepopup(QWidget *parent = nullptr);
     ~addnewnodepopup();
-
+signals:
+    void newNodeAddedButtonClicked(QString name,QString address);
 private slots:
     void on_addNewNodeButton_clicked();
 

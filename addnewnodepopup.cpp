@@ -1,7 +1,6 @@
 #include "addnewnodepopup.h"
 #include "ui_addnewnodepopup.h"
 #include <QDebug>
-#include "mainwindow.h"
 
 addnewnodepopup::addnewnodepopup(QWidget *parent) :
     QDialog(parent),
@@ -22,7 +21,7 @@ void addnewnodepopup::on_addNewNodeButton_clicked()
 {
     QString name = ui->nodeNameLineEdit->text();
     QString address = ui->nodeAddressLineEdit->text();
-    dynamic_cast<MainWindow*>(parent)->addNewNode(name,address);
+    emit newNodeAddedButtonClicked(name,address);
     this->close();
 }
 

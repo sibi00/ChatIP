@@ -1,7 +1,6 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include <QDebug>
-#include "addnewnodepopup.h"
 #include "infopopup.h"
 #include "chatwindow.h"
 MainWindow::MainWindow(QWidget *parent)
@@ -10,6 +9,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     setFixedSize(QSize(350,600));
+//    setWindowIcon(QIcon("C:\\Users\\sobie\\Documents\\ChatIP\\chat.ico")); // TODO: build dependent
+
 
     fileMenu = menuBar()->addMenu(tr("&File"));
     infoMenu = menuBar()->addMenu(tr("&Info"));
@@ -42,6 +43,7 @@ MainWindow::MainWindow(QWidget *parent)
     socket = new QUdpSocket(this);
     socket->bind(QHostAddress::LocalHost, 1234);
     connect(socket, SIGNAL(readyRead()), this, SLOT(readyRead()));
+
 
 }
 
@@ -80,7 +82,7 @@ void MainWindow::addNewNodePopup()
 {
     mPopup = new addnewnodepopup(this);
     mPopup->show();
-
+    connect(mPopup,&addnewnodepopup::newNodeAddedButtonClicked,this,&MainWindow::addNewNode);
 }
 
 void MainWindow::infoPopup()

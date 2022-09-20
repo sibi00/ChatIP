@@ -6,6 +6,7 @@
 #include <QInputDialog>
 #include <QListWidgetItem>
 #include <chatwindow.h>
+#include "addnewnodepopup.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -34,7 +35,7 @@ private:
     QMap<QString,QString> mNodesByHostAddress;
     QMap<QString,ChatWindow*> mChatWindowsByName;
     QUdpSocket * socket;
-    QDialog * mPopup;
+    addnewnodepopup * mPopup;
     QDialog * mInfoPopupp;
     QMenu *fileMenu;
     QMenu *infoMenu;
